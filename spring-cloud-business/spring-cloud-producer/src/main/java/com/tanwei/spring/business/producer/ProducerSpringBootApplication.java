@@ -1,20 +1,18 @@
-package com.tanwei.spring.business.consumer;
+package com.tanwei.spring.business.producer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @author tanwei
  * @date 2023-04-28 16:24
  **/
 @EnableDiscoveryClient
-@EnableFeignClients
 @SpringBootApplication
-public class ConsumerSpringBootApplication {
+public class ProducerSpringBootApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ConsumerSpringBootApplication.class, args);
+        SpringApplication.run(ProducerSpringBootApplication.class, args);
     }
 }

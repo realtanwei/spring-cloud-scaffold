@@ -5,6 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
+        <spring-cloud-build.version>4.0.2</spring-cloud-build.version>
         <spring-cloud.version>2022.0.1</spring-cloud.version>
         <spring-cloud-alibaba.version>2022.0.0.0-RC1</spring-cloud-alibaba.version>
 <!--        <caffeine.version>3.1.1</caffeine.version>-->

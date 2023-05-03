@@ -1,5 +1,6 @@
 spring:
   profiles:
     active: @spring.profiles.active@
+
   application:
-    name: spring-cloud-consumer
+    name: spring-cloud-producer
