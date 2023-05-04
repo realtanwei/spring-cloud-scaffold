@@ -9,3 +9,9 @@ spring:
         namespace: @nacos.namespace@
         username: @nacos.username@
         password: @nacos.password@
+    openfeign:
+      lazy-attributes-resolution: true
+
+feign:
+  sentinel:
+    enabled: true
