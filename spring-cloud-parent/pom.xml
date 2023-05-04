@@ -5,18 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <spring-cloud-build.version>4.0.2</spring-cloud-build.version>
-        <spring-cloud.version>2022.0.1</spring-cloud.version>
-        <spring-cloud-alibaba.version>2022.0.0.0-RC1</spring-cloud-alibaba.version>
+        <spring-boot.version>3.0.2</spring-boot.version>
+        <spring-cloud.version>2022.0.0</spring-cloud.version>
+        <spring-cloud-alibaba.version>2022.0.0.0-RC2</spring-cloud-alibaba.version>
 <!--        <caffeine.version>3.1.1</caffeine.version>-->
     </properties>
-
-    <parent>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-build</artifactId>
-        <version>4.0.2</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
 
     <groupId>com.tanwei.spring</groupId>
     <artifactId>spring-cloud-parent</artifactId>
@@ -27,6 +20,16 @@
     <dependencyManagement>
 
         <dependencies>
+
+            <!-- spring-boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <!--
                 版本兼容说明：
                 https://github.com/alibaba/spring-cloud-alibaba/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E
