@@ -17,4 +17,12 @@
         <module>spring-cloud-producer</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.tanwei.spring</groupId>
+            <artifactId>spring-cloud-common</artifactId>
+            <version>2023.04.28</version>
+        </dependency>
+    </dependencies>
+
 </project>

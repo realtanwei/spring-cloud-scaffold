@@ -11,6 +11,10 @@ spring:
         password: @nacos.password@
     openfeign:
       lazy-attributes-resolution: true
+    sentinel:
+      eager: true
+      transport:
+        dashboard: @sentinel.server-addr@
 
 feign:
   sentinel:
