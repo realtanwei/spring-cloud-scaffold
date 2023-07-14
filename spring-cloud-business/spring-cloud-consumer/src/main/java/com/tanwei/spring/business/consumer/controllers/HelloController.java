@@ -4,6 +4,7 @@ import com.tanwei.spring.business.consumer.services.HelloService;
 import com.tanwei.spring.core.ApiResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2023-05-03 2:42
  **/
 @RestController
+@RequestMapping("/api/v1/")
 public class HelloController {
 
 
