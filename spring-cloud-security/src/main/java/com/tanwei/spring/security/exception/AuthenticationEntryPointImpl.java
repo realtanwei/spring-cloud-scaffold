@@ -26,8 +26,7 @@ public class AuthenticationEntryPointImpl implements ServerAuthenticationEntryPo
     @Override
     public Mono<Void> commence(ServerWebExchange exchange, AuthenticationException ex) {
         ServerHttpResponse response = exchange.getResponse();
-        ApiResult<Void> apiResult = ApiResult.build(StatusCode.UNAUTHORIZED.getCode(),
-                StatusCode.UNAUTHORIZED.getMessage(), false, null);
+        ApiResult<Void> apiResult = ApiResult.build(StatusCode.UNAUTHORIZED, false, null);
         DataBuffer dataBuffer = response.bufferFactory().wrap(JSON.toJSONBytes(apiResult));
         return response.writeWith(Mono.just(dataBuffer));
     }

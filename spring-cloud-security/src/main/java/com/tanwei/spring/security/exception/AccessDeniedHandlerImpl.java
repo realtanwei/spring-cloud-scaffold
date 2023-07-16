@@ -22,20 +22,11 @@ import reactor.core.publisher.Mono;
 @Slf4j
 @Component
 public class AccessDeniedHandlerImpl implements ServerAccessDeniedHandler {
-//    @Override
-//    public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) {
-//        ApiResult<Void> apiResult = ApiResult.build(StatusCode.FORBIDDEN.getCode(),
-//                StatusCode.FORBIDDEN.getMessage(), false, null);
-//        String responseStr = JSON.toJSONString(apiResult);
-//        WebUtil.renderString(response, responseStr);
-//
-//    }
 
     @Override
     public Mono<Void> handle(ServerWebExchange exchange, AccessDeniedException denied) {
         ServerHttpResponse response = exchange.getResponse();
-        ApiResult<Void> apiResult = ApiResult.build(StatusCode.FORBIDDEN.getCode(),
-                StatusCode.FORBIDDEN.getMessage(), false, null);
+        ApiResult<Void> apiResult = ApiResult.build(StatusCode.FORBIDDEN, false, null);
         DataBuffer dataBuffer = response.bufferFactory().wrap(JSON.toJSONBytes(apiResult));
         return response.writeWith(Mono.just(dataBuffer));
     }

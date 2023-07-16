@@ -7,6 +7,7 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextImpl;
 import org.springframework.security.web.server.context.ServerSecurityContextRepository;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
@@ -29,6 +30,9 @@ public class AccessSecurityContextRepository implements ServerSecurityContextRep
     public Mono<SecurityContext> load(ServerWebExchange exchange) {
 
         String token = exchange.getRequest().getHeaders().getFirst(JwtService.TOKEN_HEADER);
+        if (!StringUtils.hasText(token)) {
+            return Mono.empty();
+        }
         return authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(token, null))
                 .map(SecurityContextImpl::new);

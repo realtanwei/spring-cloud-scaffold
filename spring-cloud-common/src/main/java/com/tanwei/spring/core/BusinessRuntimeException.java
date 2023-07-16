@@ -1,5 +1,6 @@
-package com.tanwei.spring.security.exception;
+package com.tanwei.spring.core;
 
+import com.tanwei.spring.core.StatusCode;
 import lombok.Getter;
 
 /**
@@ -10,6 +11,11 @@ import lombok.Getter;
 public class BusinessRuntimeException extends RuntimeException{
 
     private String code;
+
+    public BusinessRuntimeException(StatusCode statusCode) {
+        super(statusCode.getMessage());
+        this.code = statusCode.getCode();
+    }
 
     public BusinessRuntimeException(String code, String message) {
         super(message);

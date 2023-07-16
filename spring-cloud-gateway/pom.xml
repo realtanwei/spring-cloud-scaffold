@@ -28,6 +28,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.tanwei.spring</groupId>
             <artifactId>spring-cloud-security</artifactId>
             <version>2023.04.28</version>

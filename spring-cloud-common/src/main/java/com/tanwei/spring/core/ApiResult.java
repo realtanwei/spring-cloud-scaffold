@@ -42,10 +42,9 @@ public class ApiResult<D> {
         return build(StatusCode.FAILED.getCode(), message, Boolean.FALSE, data);
     }
 
-    public static <D> ApiResult<D> thin(StatusCode statusCode, boolean success,  D data) {
+    public static <D> ApiResult<D> build(StatusCode statusCode, boolean success, D data) {
         return build(statusCode.getCode(), statusCode.getMessage(), success, data);
     }
-
     public static <D> ApiResult<D> build(String code, String message, boolean success, D data) {
         return new ApiResult<>(code,  message, success, data);
     }

@@ -1,6 +1,6 @@
 package com.tanwei.spring.gateway.exception;
 
-import com.tanwei.spring.security.exception.BusinessRuntimeException;
+import com.tanwei.spring.core.BusinessRuntimeException;
 import org.springframework.boot.autoconfigure.web.ErrorProperties;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 import org.springframework.boot.autoconfigure.web.reactive.error.DefaultErrorWebExceptionHandler;
@@ -32,7 +32,7 @@ public class GatewayErrorWebExceptionHandler extends DefaultErrorWebExceptionHan
     protected Map<String, Object> getErrorAttributes(ServerRequest request, ErrorAttributeOptions options) {
         Throwable throwable = super.getError(request);
         String code = String.valueOf(HttpStatus.INTERNAL_SERVER_ERROR.value());
-        String message = HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase();
+        String message;
         if (throwable instanceof ResponseStatusException statusException) {
             code = String.valueOf(statusException.getStatusCode().value());
             message = statusException.getMessage();
