@@ -1,11 +1,8 @@
 package com.tanwei.spring.security.exception;
 
-import com.alibaba.fastjson.JSON;
-import com.tanwei.spring.core.ApiResult;
+import com.tanwei.spring.core.BusinessRuntimeException;
 import com.tanwei.spring.core.StatusCode;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.core.io.buffer.DataBuffer;
-import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.server.ServerAuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
@@ -25,9 +22,6 @@ public class AuthenticationEntryPointImpl implements ServerAuthenticationEntryPo
 
     @Override
     public Mono<Void> commence(ServerWebExchange exchange, AuthenticationException ex) {
-        ServerHttpResponse response = exchange.getResponse();
-        ApiResult<Void> apiResult = ApiResult.build(StatusCode.UNAUTHORIZED, false, null);
-        DataBuffer dataBuffer = response.bufferFactory().wrap(JSON.toJSONBytes(apiResult));
-        return response.writeWith(Mono.just(dataBuffer));
+        throw new BusinessRuntimeException(StatusCode.UNAUTHORIZED);
     }
 }

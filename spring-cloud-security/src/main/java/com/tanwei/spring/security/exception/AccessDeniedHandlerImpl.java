@@ -1,11 +1,8 @@
 package com.tanwei.spring.security.exception;
 
-import com.alibaba.fastjson.JSON;
-import com.tanwei.spring.core.ApiResult;
+import com.tanwei.spring.core.BusinessRuntimeException;
 import com.tanwei.spring.core.StatusCode;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.core.io.buffer.DataBuffer;
-import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.server.authorization.ServerAccessDeniedHandler;
 import org.springframework.stereotype.Component;
@@ -25,9 +22,6 @@ public class AccessDeniedHandlerImpl implements ServerAccessDeniedHandler {
 
     @Override
     public Mono<Void> handle(ServerWebExchange exchange, AccessDeniedException denied) {
-        ServerHttpResponse response = exchange.getResponse();
-        ApiResult<Void> apiResult = ApiResult.build(StatusCode.FORBIDDEN, false, null);
-        DataBuffer dataBuffer = response.bufferFactory().wrap(JSON.toJSONBytes(apiResult));
-        return response.writeWith(Mono.just(dataBuffer));
+        throw new BusinessRuntimeException(StatusCode.FORBIDDEN);
     }
 }
