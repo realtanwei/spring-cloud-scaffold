@@ -12,7 +12,7 @@
         <fastjson.version>2.0.24</fastjson.version>
         <jjwt.version>0.11.5</jjwt.version>
         <mybatis-plus.version>3.5.3</mybatis-plus.version>
-        <druid.version>1.2.16</druid.version>
+        <druid.version>1.2.18</druid.version>
 <!--        <caffeine.version>3.1.1</caffeine.version>-->
     </properties>
 
@@ -106,10 +106,14 @@
                 <artifactId>mybatis-plus-generator</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
-
+<!--            <dependency>-->
+<!--                <groupId>com.alibaba</groupId>-->
+<!--                <artifactId>druid-spring-boot-starter</artifactId>-->
+<!--                <version>${druid.version}</version>-->
+<!--            </dependency>-->
             <dependency>
                 <groupId>com.alibaba</groupId>
-                <artifactId>druid-spring-boot-starter</artifactId>
+                <artifactId>druid-spring-boot-3-starter</artifactId>
                 <version>${druid.version}</version>
             </dependency>
         </dependencies>

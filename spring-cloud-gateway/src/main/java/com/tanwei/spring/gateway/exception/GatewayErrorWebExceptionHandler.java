@@ -8,9 +8,7 @@ import org.springframework.boot.web.error.ErrorAttributeOptions;
 import org.springframework.boot.web.reactive.error.ErrorAttributes;
 import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.reactive.function.server.RouterFunction;
-import org.springframework.web.reactive.function.server.ServerRequest;
-import org.springframework.web.reactive.function.server.ServerResponse;
+import org.springframework.web.reactive.function.server.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.HashMap;
@@ -54,7 +52,7 @@ public class GatewayErrorWebExceptionHandler extends DefaultErrorWebExceptionHan
 
     @Override
     protected RouterFunction<ServerResponse> getRoutingFunction(ErrorAttributes errorAttributes) {
-        return super.getRoutingFunction(errorAttributes);
+        return RouterFunctions.route(RequestPredicates.all(), this::renderErrorResponse);
     }
 
     @Override

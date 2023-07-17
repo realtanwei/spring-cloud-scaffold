@@ -16,6 +16,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.security.web.server.ServerAuthenticationEntryPoint;
+import org.springframework.security.web.server.authorization.AuthorizationContext;
 import org.springframework.security.web.server.authorization.ServerAccessDeniedHandler;
 import org.springframework.security.web.server.context.ServerSecurityContextRepository;
 
@@ -31,7 +32,7 @@ public class SecurityConfig {
 
 
     private final UserDetailsService userDetailsService;
-    private final ReactiveAuthorizationManager authorizationManager;
+    private final ReactiveAuthorizationManager<AuthorizationContext> authorizationManager;
 
     private final ServerAuthenticationEntryPoint authenticationEntryPoint;
     private final ServerAccessDeniedHandler accessDeniedHandler;
