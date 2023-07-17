@@ -1,8 +1,6 @@
 package com.tanwei.spring.business.producer.config;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tanwei.spring.business.producer.client.HelloClient;
-import lombok.SneakyThrows;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;

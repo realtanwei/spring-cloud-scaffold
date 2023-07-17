@@ -8,7 +8,6 @@ import org.springframework.security.web.server.authorization.AuthorizationContex
 import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.PathMatcher;
-import org.springframework.web.server.ServerWebExchange;
 
 import java.util.ArrayList;
 import java.util.Collection;

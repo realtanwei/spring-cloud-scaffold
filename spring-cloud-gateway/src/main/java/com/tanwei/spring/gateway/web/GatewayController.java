@@ -23,7 +23,7 @@ public class GatewayController {
     private final AuthService authService;
 
     @PostMapping("login")
-    public Mono<ApiResult> login(@RequestBody AuthenticationRequest authenticationRequest) {
+    public Mono<ApiResult<AuthenticationResponse>> login(@RequestBody AuthenticationRequest authenticationRequest) {
         AuthenticationResponse authenticationResponse = authService.login(authenticationRequest);
         return Mono.just(ApiResult.success(authenticationResponse));
     }

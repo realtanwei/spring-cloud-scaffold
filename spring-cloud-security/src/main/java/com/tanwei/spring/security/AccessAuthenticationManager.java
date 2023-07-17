@@ -34,7 +34,7 @@ public class AccessAuthenticationManager implements ReactiveAuthenticationManage
         try {
             username = jwtService.extractUsername(token);
         } catch (JwtException exception) {
-            throw new BusinessRuntimeException(StatusCode.UNAUTHORIZED.getCode(), "登录凭证错误或无效!");
+            throw new BusinessRuntimeException(StatusCode.UNAUTHORIZED);
         }
 
         if (StringUtils.hasText(username) && SecurityContextHolder.getContext().getAuthentication() == null){
