@@ -1,4 +1,4 @@
-package com.tanwei.spring.core;
+package com.tanwei.spring.core.http;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

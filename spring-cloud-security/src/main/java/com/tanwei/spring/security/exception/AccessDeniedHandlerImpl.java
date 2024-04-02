@@ -1,7 +1,7 @@
 package com.tanwei.spring.security.exception;
 
-import com.tanwei.spring.core.BusinessRuntimeException;
-import com.tanwei.spring.core.StatusCode;
+import com.tanwei.spring.core.exception.BusinessRuntimeException;
+import com.tanwei.spring.core.http.StatusCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.server.authorization.ServerAccessDeniedHandler;

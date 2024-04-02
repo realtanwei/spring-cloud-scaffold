@@ -1,7 +1,7 @@
 package com.tanwei.spring.security;
 
-import com.tanwei.spring.core.StatusCode;
-import com.tanwei.spring.core.BusinessRuntimeException;
+import com.tanwei.spring.core.http.StatusCode;
+import com.tanwei.spring.core.exception.BusinessRuntimeException;
 import com.tanwei.spring.security.service.JwtService;
 import com.tanwei.spring.security.service.SysUserService;
 import io.jsonwebtoken.JwtException;

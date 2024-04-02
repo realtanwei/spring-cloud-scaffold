@@ -13,6 +13,7 @@
         <jjwt.version>0.11.5</jjwt.version>
         <mybatis-plus.version>3.5.3</mybatis-plus.version>
         <druid.version>1.2.18</druid.version>
+        <jackson-joda.version>2.14.1</jackson-joda.version>
 <!--        <caffeine.version>3.1.1</caffeine.version>-->
     </properties>
 
@@ -116,6 +117,13 @@
                 <artifactId>druid-spring-boot-3-starter</artifactId>
                 <version>${druid.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-joda</artifactId>
+                <version>${jackson-joda.version}</version>
+            </dependency>
+
         </dependencies>
 
     </dependencyManagement>

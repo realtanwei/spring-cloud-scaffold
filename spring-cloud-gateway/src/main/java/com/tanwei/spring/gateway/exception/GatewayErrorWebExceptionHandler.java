@@ -1,6 +1,6 @@
 package com.tanwei.spring.gateway.exception;
 
-import com.tanwei.spring.core.BusinessRuntimeException;
+import com.tanwei.spring.core.exception.BusinessRuntimeException;
 import org.springframework.boot.autoconfigure.web.ErrorProperties;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 import org.springframework.boot.autoconfigure.web.reactive.error.DefaultErrorWebExceptionHandler;

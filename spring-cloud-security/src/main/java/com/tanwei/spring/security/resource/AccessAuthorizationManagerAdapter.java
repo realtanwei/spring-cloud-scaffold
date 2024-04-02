@@ -1,7 +1,7 @@
 package com.tanwei.spring.security.resource;
 
-import com.tanwei.spring.core.StatusCode;
-import com.tanwei.spring.core.BusinessRuntimeException;
+import com.tanwei.spring.core.http.StatusCode;
+import com.tanwei.spring.core.exception.BusinessRuntimeException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.authorization.AuthorizationDecision;

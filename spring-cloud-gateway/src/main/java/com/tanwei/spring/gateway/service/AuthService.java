@@ -1,6 +1,6 @@
 package com.tanwei.spring.gateway.service;
 
-import com.tanwei.spring.core.BusinessRuntimeException;
+import com.tanwei.spring.core.exception.BusinessRuntimeException;
 import com.tanwei.spring.gateway.model.request.AuthenticationRequest;
 import com.tanwei.spring.gateway.model.response.AuthenticationResponse;
 import com.tanwei.spring.security.model.SysUser;

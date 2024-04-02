@@ -26,7 +26,12 @@
                 <nacos.namespace>38bd56cc-ea86-4c04-9260-3e70c76a48a7</nacos.namespace>
                 <nacos.group>DEFAULT_GROUP</nacos.group>
 
-                <sentinel.server-addr>127.0.0.1:9999</sentinel.server-addr>
+                <sentinel.server-addr>127.0.0.1:8088</sentinel.server-addr>
+
+                <!-- MySQL -->
+                <db.username>root</db.username>
+                <db.password>123@abcd</db.password>
+                <db.host>127.0.0.1:6033</db.host>
 
                 <zipkin.server-addr>127.0.0.1:9411</zipkin.server-addr>
                 <admin.server-addr>127.0.0.1:8989</admin.server-addr>
@@ -110,6 +115,16 @@
                     </nonFilteredFileExtensions>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven-checkstyle-plugin.version}</version>
+                <!-- 先关闭maven代码规范检查-->
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
@@ -119,12 +134,11 @@
                     <version>${spring-boot.version}</version>
                     <configuration>
                         <!--如果没有该配置，devtools不会生效-->
-                        <!--                        <fork>true</fork>-->
+                        <!--<fork>true</fork>-->
                         <includeSystemScope>true</includeSystemScope>
                     </configuration>
                 </plugin>
             </plugins>
-
         </pluginManagement>
     </build>
 

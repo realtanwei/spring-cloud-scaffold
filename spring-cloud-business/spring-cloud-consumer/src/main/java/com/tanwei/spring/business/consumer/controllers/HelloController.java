@@ -1,7 +1,7 @@
 package com.tanwei.spring.business.consumer.controllers;
 
 import com.tanwei.spring.business.consumer.services.HelloService;
-import com.tanwei.spring.core.ApiResult;
+import com.tanwei.spring.core.http.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +24,7 @@ public class HelloController {
     }
 
     @GetMapping(value = "hello")
-    public ApiResult<String> hello() {
-        return ApiResult.success(helloService.hello());
+    public R<String> hello() {
+        return R.success(helloService.hello());
     }
 }

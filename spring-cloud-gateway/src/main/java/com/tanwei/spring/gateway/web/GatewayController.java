@@ -1,6 +1,6 @@
 package com.tanwei.spring.gateway.web;
 
-import com.tanwei.spring.core.ApiResult;
+import com.tanwei.spring.core.http.R;
 import com.tanwei.spring.gateway.model.request.AuthenticationRequest;
 import com.tanwei.spring.gateway.model.response.AuthenticationResponse;
 import com.tanwei.spring.gateway.service.AuthService;
@@ -23,8 +23,8 @@ public class GatewayController {
     private final AuthService authService;
 
     @PostMapping("login")
-    public Mono<ApiResult<AuthenticationResponse>> login(@RequestBody AuthenticationRequest authenticationRequest) {
+    public Mono<R<AuthenticationResponse>> login(@RequestBody AuthenticationRequest authenticationRequest) {
         AuthenticationResponse authenticationResponse = authService.login(authenticationRequest);
-        return Mono.just(ApiResult.success(authenticationResponse));
+        return Mono.just(R.success(authenticationResponse));
     }
 }

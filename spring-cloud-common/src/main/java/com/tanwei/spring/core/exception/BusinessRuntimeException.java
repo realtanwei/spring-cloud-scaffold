@@ -1,6 +1,6 @@
-package com.tanwei.spring.core;
+package com.tanwei.spring.core.exception;
 
-import com.tanwei.spring.core.StatusCode;
+import com.tanwei.spring.core.http.StatusCode;
 import lombok.Getter;
 
 /**
