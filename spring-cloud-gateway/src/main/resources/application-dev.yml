@@ -19,3 +19,12 @@ spring:
       discovery:
         locator:
           enabled: true
+    sentinel:
+      eager: true
+      transport:
+        dashboard: @sentinel.server-addr@
+      scg:
+        fallback:
+          mode: response
+          response-status: 200
+          response-body: '{"code":429,"message":"被限流了！"}'
